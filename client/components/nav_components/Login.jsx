@@ -47,6 +47,10 @@ export default class Login extends React.Component{
        browserHistory.push('/profile')
     }
 
+    addEvent(){
+        {browserHistory.push('/event/add')}
+    }
+
     // log users out of the sytem
     logout(){
         Meteor.logout();
@@ -62,7 +66,7 @@ export default class Login extends React.Component{
         }else{
             return(
                 <DropdownButton bsStyle="primary" title="Actions" id="primaryActions">
-                    <MenuItem eventKey="1" >Create Event</MenuItem>
+                    <MenuItem eventKey="1" onClick={this.addEvent} >Create Event</MenuItem>
                     <MenuItem eventKey="1" >Edit Profile</MenuItem>
                     <MenuItem divider />
                     <MenuItem eventKey="1" onClick={this.logout} >Logout</MenuItem>
